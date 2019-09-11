@@ -1,0 +1,12 @@
+<div class="template-refs card">
+  <passenger-count [passengers]="passengers"></passenger-count>
+  <div *ngFor="let passenger of passengers">{{ passenger.fullname }}</div>
+  <div class="list-group">
+    <passenger-detail
+      *ngFor="let passenger of passengers"
+      [passenger]="passenger"
+      (edit)="handleEdit($event)"
+      (delete)="handleDelete($event)"
+    ></passenger-detail>
+  </div>
+</div>

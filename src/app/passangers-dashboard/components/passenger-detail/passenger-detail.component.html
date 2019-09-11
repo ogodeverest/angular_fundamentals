@@ -1,0 +1,26 @@
+<a
+  class="list-group-item "
+  [ngClass]="{
+    'list-group-item-success': passenger.checkedIn,
+    'list-group-item-danger': !passenger.checkedIn
+  }"
+>
+  <input
+    type="text"
+    class="form-control"
+    [value]="passenger.fullname"
+    *ngIf="editMode"
+    (keyup)="editPasseger($event)"
+  />
+  <p *ngIf="!editMode">{{ passenger.fullname }}</p>
+  <br />
+  <button class="btn btn-sm btn-warning" (click)="editMode = !editMode">
+    Edit
+  </button>
+  <button class="btn btn-sm btn-danger" (click)="deletePassager($event)">
+    Delete
+  </button>
+  <pre>{{
+    passenger.children ? (passenger.children | json) : "No children"
+  }}</pre>
+</a>
