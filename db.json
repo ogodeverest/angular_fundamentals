@@ -1,0 +1,27 @@
+{
+  "passangers": [
+    {
+      "id": 2,
+      "fullname": "Roses",
+      "checkedIn": false,
+      "checkInDate": null,
+      "children": [
+        {
+          "name": "Ted",
+          "age": 12
+        },
+        {
+          "name": "Chloe",
+          "age": 7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullname": "James",
+      "checkedIn": true,
+      "checkInDate": 1491606000000,
+      "children": null
+    }
+  ]
+}

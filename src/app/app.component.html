@@ -1,3 +1,17 @@
 <div class="app conatiner">
-  <app-passanger-dashboard></app-passanger-dashboard>
+  <nav>
+    <ul>
+      <li *ngFor="let item of nav">
+        <a
+          [routerLink]="item.link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="
+            item.exact ? { exact: true } : { exact: false }
+          "
+          >{{ item.name }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

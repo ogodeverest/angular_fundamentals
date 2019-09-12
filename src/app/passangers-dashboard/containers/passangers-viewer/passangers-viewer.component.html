@@ -1,0 +1,7 @@
+<div class="passanger-viewer">
+  <p>{{ passenger | json }}</p>
+  <passenger-form
+    (update)="handleUpdate($event)"
+    [passenger]="passenger"
+  ></passenger-form>
+</div>

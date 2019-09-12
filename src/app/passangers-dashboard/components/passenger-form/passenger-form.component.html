@@ -1,0 +1,72 @@
+<form
+  #passangerForm="ngForm"
+  novalidate
+  (ngSubmit)="handleSubmit(passangerForm.value, passangerForm.valid)"
+>
+  Passanger name :
+  <input
+    type="text"
+    name="fullname"
+    [ngModel]="passenger?.fullname"
+    #fullname="ngModel"
+    required
+  />
+  <div class="error" *ngIf="!!fullname?.errors?.required && fullname.dirty">
+    Passanger name is required
+  </div>
+  {{ fullname.errors | json }}
+
+  <br />
+  Passanger id :
+  <input
+    type="number"
+    name="id"
+    [ngModel]="passenger?.id"
+    #id="ngModel"
+    required
+  />
+  <div class="error" *ngIf="!!id?.errors?.required && id.dirty">
+    Passanger id is required
+  </div>
+  {{ id.errors | json }}
+
+  <br />
+
+  Passanger Checked :
+  <label>
+    <input
+      type="radio"
+      name="checkedIn"
+      [value]="true"
+      [ngModel]="passenger?.checkedIn"
+      (ngModelChange)="handleChange($event)"
+    />
+    Yes
+  </label>
+  <label>
+    <input
+      type="radio"
+      name="checkedIn"
+      [value]="false"
+      [ngModel]="passenger?.checkedIn"
+      (ngModelChange)="handleChange($event)"
+    />
+    No
+  </label>
+
+  <br />
+  <div *ngIf="passangerForm.value.checkedIn">
+    Passanger Date :
+    <input type="text" name="checkInDate" [ngModel]="passenger?.checkInDate" />
+  </div>
+
+  <div>Valid: {{ passangerForm.valid | json }}</div>
+
+  <div>Invalid : {{ passangerForm.invalid | json }}</div>
+  <br />
+
+  {{ passangerForm.value | json }}
+  <button type="submit" [disabled]="passangerForm.invalid">
+    Update Passanger
+  </button>
+</form>

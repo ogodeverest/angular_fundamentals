@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataBindingComponent } from './data-binding.component';
+import { PassengerFormComponent } from './passenger-form.component';
 
-describe('DataBindingComponent', () => {
-  let component: DataBindingComponent;
-  let fixture: ComponentFixture<DataBindingComponent>;
+describe('PassengerFormComponent', () => {
+  let component: PassengerFormComponent;
+  let fixture: ComponentFixture<PassengerFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataBindingComponent ]
+      declarations: [ PassengerFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataBindingComponent);
+    fixture = TestBed.createComponent(PassengerFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
